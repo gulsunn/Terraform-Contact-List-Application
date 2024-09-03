@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "contactlist-backend-techpro"
-    key = "env/dev/tf-remote-backend.tfstate"
+    bucket = "contactlist-backend-rose"
+    key = "env/prod/tf-remote-backend.tfstate"
     region = "us-east-1"
     dynamodb_table = "tf-s3-app-lock"
     encrypt = true
@@ -20,7 +20,7 @@ module "contactlist" {
   git-user = "techpro-aws-devops"
   key-name = "insbekir"
   hosted-zone = "samdevops.link"
-  env = "dev"
+  env = "prod"
 }
 
 output "websiteurl" {
